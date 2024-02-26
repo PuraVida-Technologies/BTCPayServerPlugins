@@ -73,6 +73,7 @@ public class BlinkLightningConnectionStringHandler : ILightningConnectionStringH
         var client = _httpClientFactory.CreateClient();
 
         client.DefaultRequestHeaders.Add("X-Api-Key", apiKey);
+        client.DefaultRequestHeaders.Add("Authorization", "Bearer " + apiKey);
 
         client.BaseAddress = uri;
 
